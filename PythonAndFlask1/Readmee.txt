@@ -1,0 +1,1 @@
+This is a simple manage of web pages using flask: you can move to Index, Languages ann contacts section

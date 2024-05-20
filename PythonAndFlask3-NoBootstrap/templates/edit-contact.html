@@ -1,0 +1,10 @@
+
+<!-- Form to edit the Contatc | From EDIT endpoint -->
+<form action="/update/{{contact.0}}" method="POST"> 
+    <!-- Input the new Data to the Data Base -->
+    <input type="text" name="FullName" placeholder="Fullname" value="{{contact.1}}">
+    <input type="text" name="Phone" placeholder="Phone" value="{{contact.2}}">
+    <input type="text" name="Email" placeholder="Email" value="{{contact.3}}">
+    <button type="submit">Update Changes</button>
+    <!-- -->
+</form>

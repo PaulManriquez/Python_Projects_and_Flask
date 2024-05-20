@@ -1,0 +1,59 @@
+<!--============-Flash section, Show messages -->
+<!-- Contact added successfully -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <p>{{message}}</p> <!--Paragraph message -->
+{% endfor %}
+{% endif %} 
+{% endwith %}
+<!--===========================================-->   
+
+<!--Form add a new user -->
+<form action="/add_contact" method="POST"> <!--Send to the end point route the data retrieved -->
+    <!-- Input Data to the Data Base -->
+    <input type="text" name="FullName" placeholder="Fullname">
+    <input type="text" name="Phone" placeholder="Phone">
+    <input type="text" name="Email" placeholder="Email">
+    <button type="submit">Save</button>
+    <!-- -->
+</form>
+<!--END Form add a new user -->
+
+<table><!-- Table to display the data -->
+
+    <!-- HEAD TO SHOW THE TABLE -->
+    <thead> <!-- Header name-->
+        <tr>My contacts <!-- Table Row | data colums in the data base -->
+            <td>FullName</td><!-- Cell | Data-->
+            <td>Phone</td>
+            <td>Email</td>
+            <td>Operations</td>
+        </tr>
+    </thead>
+    <!-- END HEAD TO SHOW THE TABLE -->
+
+    <!-- Body to begin to display the current data -->
+    <tbody>
+        {% for contact in contacts %}
+        <tr> <!--ROW | Display each Row data for the current contacts in the data base -->
+            <td>{{ contact.1 }}</td><!--Accessing to the index in the tuple -->
+            <td>{{ contact.2 }}</td>
+            <td>{{ contact.3 }}</td>
+            <!--Cell buttons -->
+            <td><!--(a) Anchor | Hiper-links-->
+                <a href="/edit/{{contact.0}}">Edit</a><!-- Pass the reference based on the index tuple, what element to delete -->
+                <a href="/delete/{{contact.0}}">Delete</a> <!--{{contact.0}}:Pass the id to know what element to delete -->
+            </td>
+            <!--End cell buttons -->
+        </tr>
+        {% endfor %}
+    </tbody>
+    <!-- END Body to begin to display the current data -->
+
+</table><!-- END Table to display the data -->
+
+
+
+
+

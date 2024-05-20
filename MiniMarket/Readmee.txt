@@ -1,0 +1,1 @@
+This is a CRUD  that can be implemented to a minimarked to handle the incomes and manges its products

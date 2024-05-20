@@ -1,0 +1,1 @@
+This is an implementation to messure the time that a certain function will be take till finish it's execution
